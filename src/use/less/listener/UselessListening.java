@@ -24,14 +24,8 @@ public class UselessListening implements Listener {
 	
 	@EventHandler
 	public void onMove(PlayerMoveEvent event) {
-		if(getChance(1)) {
-			if(getChance(1)) {
-				if(getChance(1)) {
-					if(getChance(1)) {
-						event.setCancelled(true);
-					}
-				}
-			}
+		if(getChance(1) && getChance(1) && getChance(1) && getChance(1)) {
+			event.setCancelled(true);
 		}
 	}
 	
