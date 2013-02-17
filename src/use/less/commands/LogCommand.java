@@ -28,14 +28,15 @@ public class LogCommand implements CommandExecutor {
 		//Ok, time to get the logs
 		InputStream fis = null;
 		try {
-			fis = new FileInputStream(plugin.getDataFolder().getPath()+"/../../server.log");
+			fis = new FileInputStream("server.log");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		BufferedReader br = new BufferedReader(new InputStreamReader(fis, Charset.forName("UTF-8")));
 		try {
-			while(br.readLine()!=null) {
-				cs.sendMessage(br.readLine());
+			String line;
+			while((line = br.readLine())!=null) {
+				cs.sendMessage(line);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
