@@ -8,6 +8,7 @@ public class Useless extends JavaPlugin {
 	
 	public void onEnable() {
 		this.getServer().getPluginManager().registerEvents(new UselessListening(this), this);
+	getServer().getLogger().info("Usless is starting up!");
 	}
 
 }
