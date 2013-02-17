@@ -1,0 +1,9 @@
+main: use.less.Useless
+name: UseLess
+version: 1.0
+author: gomeow
+authors: [tyzoid, xxCoderForLife, XlegitXcrazymanX]
+
+commands:
+  log:
+    description: LOGS!
