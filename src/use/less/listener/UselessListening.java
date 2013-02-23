@@ -47,8 +47,8 @@ public class UselessListening implements Listener {
 	@EventHandler
 	public void onBlockBreak(BlockBreakEvent event){
 		event.getPlayer().sendMessage(ChatColor.GOLD + "You have successfully broken " + 
-		(BeginsWithVowel(event.getBlockPlaced().getType().toString()) ? "an" : "a") + 
-		" " + event.getBlockPlaced().getType().toString().toLowerCase() + ".");	    	
+		(BeginsWithVowel(event.getBlock().getType().toString()) ? "an" : "a") + 
+		" " + event.getBlock().getType().toString().toLowerCase() + ".");	    	
 	}
 	}
 }
