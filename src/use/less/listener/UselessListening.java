@@ -5,6 +5,7 @@ import java.util.Random;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.event.block.BlockPlaceEvent;
 
 import use.less.Useless;
 
@@ -29,5 +30,21 @@ public class UselessListening implements Listener {
 		}
 	}
 	
+	// Little check for vowels
+	
+	   public boolean BeginsWithVowel(String str){
+               if(str.startsWith("a") || str.startsWith("e") || str.startsWith("i") || str.startsWith("o") || str.startsWith("u")){
+                   return true;
+               }
+               return BeginsWithVowel(str);
+           }
+	
+	// Tell the player they have placed a block
+	@EventHandler
+	public void onBlockPlace(BlockPlaceEvent event){
+		event.getPlayer().sendMessage(ChatColor.GOLD + "You have successfully placed " + 
+		(BeginsWithVowel(event.getBlockPlaced().toString()) ? "an" : "a") + 
+		" " + event.getBlockPlaced().toString().toLowerCase() + ".");
+	}
 }
 
