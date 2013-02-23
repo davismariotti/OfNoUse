@@ -33,10 +33,7 @@ public class UselessListening implements Listener {
 	// Little check for vowels
 	
 	   public boolean BeginsWithVowel(String str){
-               if(str.startsWith("a") || str.startsWith("e") || str.startsWith("i") || str.startsWith("o") || str.startsWith("u")){
-                   return true;
-               }
-               return BeginsWithVowel(str);
+               return (str.startsWith("a") || str.startsWith("e") || str.startsWith("i") || str.startsWith("o") || str.startsWith("u"));
            }
 	
 	// Tell the player they have placed a block
