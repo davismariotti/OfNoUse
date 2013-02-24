@@ -6,6 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.block.BlockBreakEvent;
 
 import use.less.Useless;
 
@@ -40,8 +41,15 @@ public class UselessListening implements Listener {
 	@EventHandler
 	public void onBlockPlace(BlockPlaceEvent event){
 		event.getPlayer().sendMessage(ChatColor.GOLD + "You have successfully placed " + 
-		(BeginsWithVowel(event.getBlockPlaced().toString()) ? "an" : "a") + 
-		" " + event.getBlockPlaced().toString().toLowerCase() + ".");
+		(BeginsWithVowel(event.getBlockPlaced().getType().toString()) ? "an" : "a") + 
+		" " + event.getBlockPlaced().getType().toString().toLowerCase() + ".");
+		
+	@EventHandler
+	public void onBlockBreak(BlockBreakEvent event){
+		event.getPlayer().sendMessage(ChatColor.GOLD + "You have successfully broken " + 
+		(BeginsWithVowel(event.getBlock().getType().toString()) ? "an" : "a") + 
+		" " + event.getBlock().getType().toString().toLowerCase() + ".");	    	
+	}
 	}
 }
 
