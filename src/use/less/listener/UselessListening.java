@@ -33,7 +33,7 @@ public class UselessListening implements Listener {
 	
 	// Little check for vowels
 	
-	   public boolean BeginsWithVowel(String str){
+	   public boolean beginsWithVowel(String str){
                return (str.startsWith("a") || str.startsWith("e") || str.startsWith("i") || str.startsWith("o") || str.startsWith("u"));
            }
 	
@@ -41,13 +41,13 @@ public class UselessListening implements Listener {
 	@EventHandler
 	public void onBlockPlace(BlockPlaceEvent event){
 		event.getPlayer().sendMessage(ChatColor.GOLD + "You have successfully placed " + 
-		(BeginsWithVowel(event.getBlockPlaced().getType().toString()) ? "an" : "a") + 
+		(beginsWithVowel(event.getBlockPlaced().getType().toString()) ? "an" : "a") + 
 		" " + event.getBlockPlaced().getType().toString().toLowerCase() + ".");
 		
 	@EventHandler
 	public void onBlockBreak(BlockBreakEvent event){
 		event.getPlayer().sendMessage(ChatColor.GOLD + "You have successfully broken " + 
-		(BeginsWithVowel(event.getBlock().getType().toString()) ? "an" : "a") + 
+		(beginsWithVowel(event.getBlock().getType().toString()) ? "an" : "a") + 
 		" " + event.getBlock().getType().toString().toLowerCase() + ".");	    	
 	}
 	}
